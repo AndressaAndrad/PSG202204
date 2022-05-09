@@ -57,8 +57,8 @@ namespace Cap202204ConsoleApp
         {
             Console.Write("Digite o valor em reais R$ ");
             string num = Console.ReadLine();
-            double real = Convert.ToDouble(num);
-            double dolar = real * 5;
+            decimal real = Convert.ToDecimal(num);
+            decimal dolar = real * 5;
 
             Console.WriteLine("O valor {0} vale em Dolar US$ {1}", real, dolar);
         }
