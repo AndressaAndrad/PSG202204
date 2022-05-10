@@ -15,7 +15,10 @@ namespace Cap202204ConsoleApp
 
             Console.ReadLine();
         }
-        
+        /// <summary>
+        /// Desafio 006 - Faça um programa que leia a largura e a altura de uma parede em metros, e calcule a sua área e a 
+        /// quantidade de tinta necessária para pintá-la, sabendo que cada litro de tinta pinta uma área de 2 metros quadrados.
+        /// </summary>
         public static void Desafio_006()
         {
             Console.Write("Digite a altura da parade que deseja pintar: ");
