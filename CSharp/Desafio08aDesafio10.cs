@@ -18,9 +18,10 @@ namespace Cap202204ConsoleApp
             Console.ReadLine();
         }
         
-                /// <summary>
+        /// <summary>
         /// Desafio 008 – Faça um programa que leia o salário de um funcionário, e mostre seu novo salário, com 15% de aumento.
         /// </summary>
+        
         public static void Desafio_008()
         {
             Console.Write("Digite o valor do seu salário: R$");
@@ -34,6 +35,7 @@ namespace Cap202204ConsoleApp
         /// <summary>
         /// Desafio 009 – escreva um programa que converta uma temperatura digitada em graus celsius para farenheit.
         /// </summary>
+        
         public static void Desafio_009()
         {
             Console.Write("Digite a temperatura em grau Celsis: ");
@@ -47,6 +49,7 @@ namespace Cap202204ConsoleApp
         /// e a quantidade de dias pelos quais ele foi alugado. Calcule o preço a pagar, sabendo que o carro custa 
         /// R$ 60,00 por dia e R$ 0,15 por km rodado.
         /// </summary>
+        
         public static void Desafio_010()
         {
             Console.Write("Por quantos dias foi alugado? ");
