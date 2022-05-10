@@ -38,11 +38,11 @@ namespace Cap202204ConsoleApp
         
         public static void Desafio_009()
         {
-            Console.Write("Digite a temperatura em grau Celsis: ");
-            double celsis = Convert.ToDouble(Console.ReadLine());
-            double fahrenheit = celsis * 1.8 + 32;
+            Console.Write("Digite a temperatura em grau Celsius: ");
+            double celsius = Convert.ToDouble(Console.ReadLine());
+            double fahrenheit = celsius * 1.8 + 32;
 
-            Console.WriteLine("A temperatura {0} graus Celsis equivalem a {1} graus Fahrenheit", celsis, fahrenheit);
+            Console.WriteLine("A temperatura {0} graus Celsius equivalem a {1} graus Fahrenheit", celsius, fahrenheit);
         }
         /// <summary>
         /// Desafio 010 – Escreva um programa que pergunte a quantidade de km percorridos por um carro alugado, 
