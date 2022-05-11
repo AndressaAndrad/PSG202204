@@ -30,7 +30,8 @@ namespace Cap202204ConsoleApp
 
             Console.WriteLine("O seu salário é R${0}, 15% sobre seu salário é R${1}", salario, adicional);
             Console.WriteLine(" O seu salário bruto será de R${0}", (salario+adicional));
-
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    
         }
         /// <summary>
         /// Desafio 009 – escreva um programa que converta uma temperatura digitada em graus celsius para farenheit.
@@ -44,6 +45,7 @@ namespace Cap202204ConsoleApp
 
             Console.WriteLine("A temperatura {0} graus Celsius equivalem a {1} graus Fahrenheit", celsius, fahrenheit);
         }
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         /// <summary>
         /// Desafio 010 – Escreva um programa que pergunte a quantidade de km percorridos por um carro alugado, 
         /// e a quantidade de dias pelos quais ele foi alugado. Calcule o preço a pagar, sabendo que o carro custa 
