@@ -29,6 +29,7 @@ namespace Cap202204ConsoleApp
             double tinta = parede * largura / 2;
             Console.WriteLine("A quantidade de tinta para pintar {0}m² é {1} litros.", parede*largura,tinta);
         }
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
         /// <summary>
         /// Desafio 007 - Faça um programa que leia o preço de um produto, e mostre seu novo preço, com 5% de desconto.
         /// </summary>
