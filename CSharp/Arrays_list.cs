@@ -34,6 +34,11 @@ public static void Encontro24_Codigo01()
             }
         }
         --------------------------------------------------------------------------------------------------------------------------------------------------------------
+        /// <summary>
+        /// Desafio 011 – um professor quer armazenas o nome dos seus alunos para realizar algumas tarefas. 
+        /// Faça um programa que ajude ele,  
+        /// lendo o nome deles e escrevendo todos os nomes armazenados.
+        /// </summary>
         public static void Desafio_011()
         {
 
@@ -66,9 +71,5 @@ public static void Encontro24_Codigo01()
                 
         
     }
-      
-}
-    }
-    
       
 }
