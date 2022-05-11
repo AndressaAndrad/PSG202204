@@ -33,7 +33,7 @@ namespace Cap202204ConsoleApp
             Console.WriteLine("O milimetro de {0} vale {1}mm.", valor, milim);
                        
         }
-
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         /// <summary>
         /// 004 - Faça um programa que leia um número inteiro e mostre na sua tela a sua tabuada.
         /// </summary>
@@ -48,7 +48,7 @@ namespace Cap202204ConsoleApp
                 int resul = tab * i;
                 Console.WriteLine("{0} x {1} = {2} ",i,tab, resul);
             }
-         
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------         
         }
         /// <summary>
         /// 005 - Crie um programa que leia o quanto uma pessoa tem na carteira e mostre quantos dólares ela pode comprar. Considere US$ 1,00 = R$ 5,00
