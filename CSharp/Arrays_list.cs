@@ -33,6 +33,42 @@ public static void Encontro24_Codigo01()
                 Console.WriteLine(i);
             }
         }
+        --------------------------------------------------------------------------------------------------------------------------------------------------------------
+        public static void Desafio_011()
+        {
+
+            List<string> listaDeNomes = new List<string>();
+            while (true)
+            {
+                Console.Clear();
+                Console.WriteLine("Qtde de alunos na lista: {0}.", listaDeNomes.Count());
+                Console.Write("Informe o nome do aluno: ");
+                string nome = Console.ReadLine();
+                listaDeNomes.Add(nome);
+                Console.Write("Deseja terminar (S/N) ?");
+                string opcao = Console.ReadLine();
+                if (opcao.ToUpper() == "S")
+                {
+                    break;
+                }
+            }
+            Console.Clear();
+            Console.WriteLine("Qtde de alunos na lista: {0}.", listaDeNomes.Count());
+            Console.WriteLine("Imprim,indo a lista...");
+            foreach (string nome in listaDeNomes)
+            {
+                Console.WriteLine("--> {0}", nome);
+            }
+
+
+
+        }
+                
+        
     }
+      
+}
+    }
+    
       
 }
