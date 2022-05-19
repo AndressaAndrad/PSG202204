@@ -24,22 +24,25 @@ namespace Cap202204ConsoleApp.Desafios
         private List<Pessoa> listaFeminina;
 
         private List<Pessoa> listaNascidosAntes1970;
+        private List<Pessoa> listaCalculoIMC;
 
         public Desafio044()
         {
             this.listaMasculina = new List<Pessoa>();
             this.listaFeminina = new List<Pessoa>();
             this.listaNascidosAntes1970 = new List<Pessoa>();
+            this.listaCalculoIMC = new List<Pessoa>();
         }
 
         public void Executar()
         {
-            this.PreencherListaMasculina();
-            this.PreencherListaFeminina();
+            //this.PreencherListaMasculina();
+            //this.PreencherListaFeminina();
             this.PreencherListaNascidosAntes1970();
 
-            this.ExibirQuemNasceuPrimeiro();
-            this.ExibirQuemNasceuPorUltimo();
+            //this.ExibirQuemNasceuPrimeiro();
+            //this.ExibirQuemNasceuPorUltimo();
+            this.CalcularIMC();
         }
 
         /// <summary>
@@ -108,27 +111,43 @@ namespace Cap202204ConsoleApp.Desafios
 
         private void CalcularIMC()
         {
-            foreach (Pessoa item in this.listaNascidosAntes1970)
+            while (true)
             {
+                foreach (Pessoa item in this.listaNascidosAntes1970)
+                {
+                    Console.WriteLine("Código: {0} | Nome Completo: {1} {2}| Data de Nascimento: {3} .",item.Codigo, item.Nome, item.SobreNome,item.DtNascimento);
+                }
+
                 Console.Write("Digite um Código: ");
-                int opcao = 0;
-                string s = Console.ReadLine();
+                    int opcao = 0;
+                    string s = Console.ReadLine();
                 if (int.TryParse(s, out opcao))
                 {
                     Pessoa achado = this.listaNascidosAntes1970.SingleOrDefault(pes => pes.Codigo == opcao);
                     if (achado != null)
                     {
                         Console.Write("Informe o peso: ");
-                        achado.Peso = Convert.ToDouble(achado.Peso);
+                        achado.Peso = Convert.ToDouble(Console.ReadLine());
 
-                        Console.WriteLine("Informe a altura: ");
-                        achado.Altura = Convert.ToDouble(achado.Altura);
+                        Console.Write("Informe a altura: ");
+                        achado.Altura = Convert.ToDouble(Console.ReadLine());
 
-                        double imc = achado.Peso(achado.Altura *  achado.Altura);
+                        double altura2 = achado.Altura * achado.Altura;
+                        double imc = achado.Peso/ altura2;
+
+                        this.listaCalculoIMC.Add(achado);
+                        this.listaNascidosAntes1970.Remove(achado);
+
+                        Console.Write("Nome: {0}, seu IMC é: {1}", achado.Nome, imc);
+                        Console.ReadLine();
+
                     }
 
                 }
+             
             }
+           
+         
         }
     }
 }
