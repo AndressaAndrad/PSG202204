@@ -58,8 +58,10 @@ namespace Cap202204ConsoleApp.Desafio
             Console.WriteLine("número de estados encontrados: {0}.", this.lista01.Count());
             foreach (Estado item in this.lista01)
             {
+                Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.WriteLine("- Estado encontrado -");
                 Console.WriteLine("{0} | {1}", item.Nome, item.Siglauf);
+                Console.ResetColor();
             }
             Console.WriteLine();
         }
@@ -70,6 +72,7 @@ namespace Cap202204ConsoleApp.Desafio
         private void Exercicio05()
         {
 
+           
             while (true)
             {
                 Console.Write("Digite uma Sigla de Estado: ");
@@ -82,18 +85,31 @@ namespace Cap202204ConsoleApp.Desafio
                 Console.WriteLine("número de Siglas encontradas: {0}.", this.lista02.Count());
                 foreach (Estado item in this.lista02)
                 {
+                    Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.WriteLine("- Sigla encontrada -");
                     Console.WriteLine("{0} | {1}", item.Siglauf, item.Nome);
+                    Console.ResetColor();
+  
+                }
+                Console.Write("Deseja parar (S/N):");
+                string saida = Console.ReadLine();
+                if (saida.ToUpper() == "S")
+                {
+                    break;
                 }
                 Console.WriteLine();
             }
+            Console.ReadLine();
         }
         /// <summary>
         /// 6 - Criar um método que produza uma lista paralela com todos os Estados, 
         /// filtrando pela Região do Brasil (listar os dados de RegiaoBrasilFakeDB).
         /// </summary>
         private void Exercicio06()
+         
         {
+            
+
             Console.WriteLine("-Lista para mostrar todos os estados da região desejada-");
             Console.WriteLine("Escolha a região desejada: ");
             string regiao = Console.ReadLine();
@@ -103,9 +119,12 @@ namespace Cap202204ConsoleApp.Desafio
             Console.WriteLine("Estados da regiao {0}:", regiao);
             foreach (Estado item in this.lista03)
             {
+                Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("{0} - Sigla: {1}", item.Nome, item.Siglauf);
+                Console.ResetColor();
             }
-            Console.WriteLine();
+           
+            Console.ReadLine();
         }
 
         /// <summary>
@@ -113,10 +132,11 @@ namespace Cap202204ConsoleApp.Desafio
         /// </summary>
         private void Exercicio07()
         {
+            Console.Clear();
 
             while (true)
             {
-                Console.Write("Qual o município que você procura? >");
+                Console.Write("Qual o município que você procura? ");
                 string nomem = Console.ReadLine();
 
                 this.lista04 = MunicipioFakeDB.Municipios.Where(pes => pes.Nome == nomem).ToList();
@@ -141,13 +161,15 @@ namespace Cap202204ConsoleApp.Desafio
                 {
                     break;
                 }
-                Console.WriteLine();
+               
             }
+            Console.ReadLine();
         }
 
         public void Exercicio08()
         {
             Console.Clear();
+
             Console.WriteLine("-- EXERCÍCIO  8");
             Console.WriteLine("Digite a sigla do estado (RO): ");
             string opcao = Console.ReadLine();
@@ -166,6 +188,7 @@ namespace Cap202204ConsoleApp.Desafio
                 }
             }
             Console.WriteLine("Total de Registros: {0}", this.lista05.Count());
+
             Console.ReadLine();
         }
 
@@ -182,15 +205,19 @@ namespace Cap202204ConsoleApp.Desafio
             this.lista09 = MunicipioFakeDB.Municipios.Where(pes => pes.Ibge7 == resposta).ToList();
             if (this.lista09.Count == 0)
             {
+                Console.ForegroundColor = ConsoleColor.Red; 
                 Console.WriteLine("Não existem dados a serem exibidos.");
+                Console.ResetColor();
             }
             else
             {
                 foreach (Municipio item in this.lista09)
                 {
+                    Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine("IBGE: {0} |Código: {1} | Município: {2} | Sigla: {3} | " +
                         "População: {4} | CEP: {5} ", item.Ibge7, item.Codigo, item.Nome, 
                         item.Siglauf, item.Populacao, item.Cep);
+                    Console.ResetColor();
                 }
              }
             Console.WriteLine("Total de Registros: {0}", this.lista09.Count());
@@ -211,15 +238,18 @@ namespace Cap202204ConsoleApp.Desafio
             this.lista10 = MunicipioFakeDB.Municipios.Where(pes => pes.Cep == resposta).ToList();
             if (this.lista10.Count == 0)
             {
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("Não existem dados a serem exibidos.");
+                Console.ResetColor();
             }
             else
             {
                 foreach (Municipio item in this.lista10)
-                {
+                {   Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine("CEP: {0} |Código: {1} | Município: {2} | Sigla: {3} | " +
                         "População: {4} | IBGE: {5} ", item.Cep, item.Codigo, item.Nome,
                         item.Siglauf, item.Populacao, item.Ibge7);
+                    Console.ResetColor();
                 }
                
             }
