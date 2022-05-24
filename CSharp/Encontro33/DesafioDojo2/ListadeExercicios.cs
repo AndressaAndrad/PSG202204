@@ -85,7 +85,7 @@ namespace Cap202204ConsoleApp.Desafios
                 {
                     Console.WriteLine("Sigla não encontrada, digite novamente!");
                 }
-                this.sigla = FakeDB.IBGE.EstadoFakeDB.Estados.Where(pes => pes.Siglauf == nome).ToList();
+                this.sigla = FakeDB.IBGE.EstadoFakeDB.Estados.Where(pes => pes.Siglauf == nome.ToUpper()).ToList();
                 Console.WriteLine("número de Siglas encontradas: {0}.", this.sigla.Count());
                 foreach (Estado item in this.sigla)
                 {
@@ -122,7 +122,7 @@ namespace Cap202204ConsoleApp.Desafios
                 Console.Write("Escolha a região desejada: ");
                 string regiao = Console.ReadLine();
                 this.listaEstadosRegiaoSelecionada = FakeDB.IBGE.EstadoFakeDB.Estados
-                    .Where(pes => pes.NomeRegiao.ToUpper() == regiao || pes.NomeRegiao.ToLower() == regiao || pes.NomeRegiao == regiao)
+                    .Where(pes => pes.NomeRegiao.StartsWith(regiao))
                     .ToList();
                 Console.WriteLine("Estados da regiao {0}:", regiao);
                 foreach (Estado item in this.listaEstadosRegiaoSelecionada)
@@ -158,7 +158,7 @@ namespace Cap202204ConsoleApp.Desafios
                 Console.Write("Consultar o município que você procura? ");
                 string nomem = Convert.ToString(Console.ReadLine());
 
-                this.listaConsultarMunicipioPeloNome = MunicipioFakeDB.Municipios.Where(pes => pes.NomeMunicipio.ToLower() == nomem).ToList();
+                this.listaConsultarMunicipioPeloNome = MunicipioFakeDB.Municipios.Where(pes => pes.NomeMunicipio.StartsWith(nomem)).ToList();
                 foreach (Municipio item in this.listaConsultarMunicipioPeloNome)
                 {
                     Console.ForegroundColor = ConsoleColor.Green;
@@ -190,10 +190,10 @@ namespace Cap202204ConsoleApp.Desafios
             Console.Clear();
             while (true)
             {
-                Console.WriteLine("-- EXERCÍCIO  5");
+                Console.WriteLine("-- EXERCÍCIO  5--");
                 Console.WriteLine("Digite a sigla do estado (ex: RO): ");
                 string opcao = Console.ReadLine();
-                this.listaMunicipioPorEstado = MunicipioFakeDB.Municipios.Where(pes => pes.Siglauf.StartsWith(opcao)).ToList();
+                this.listaMunicipioPorEstado = MunicipioFakeDB.Municipios.Where(pes => pes.Siglauf == opcao.ToUpper()).ToList();
                 if (this.listaMunicipioPorEstado.Count() == 0)
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
@@ -263,7 +263,7 @@ namespace Cap202204ConsoleApp.Desafios
             Console.Clear();
             while (true)
             {
-                Console.WriteLine("-- EXERCÍCIO 10 --");
+                Console.WriteLine("-- EXERCÍCIO 07 --");
                 Console.WriteLine("Digite o CEP: ");
                 int resposta = Convert.ToInt32(Console.ReadLine());
                 this.pesquisarMunicipioPorCep = MunicipioFakeDB.Municipios.Where(pes => pes.Cep == resposta).ToList();
@@ -283,15 +283,17 @@ namespace Cap202204ConsoleApp.Desafios
                     }
 
                 }
+                Console.WriteLine("Total de Registros: {0}", this.pesquisarMunicipioPorCep.Count());
                 Console.Write("Deseja passar para o proximo exercicio (S/N):");
                 string saida = Console.ReadLine();
                 if (saida.ToUpper() == "S")
                 {
                     break;
                 }
-                Console.WriteLine("Total de Registros: {0}", this.pesquisarMunicipioPorCep.Count());
-                Console.WriteLine("-- FIM DOS EXERCÍCIOS --"); 
+              
+                
             }
+            Console.WriteLine("-- FIM DOS EXERCÍCIOS --");
 
         }
        
