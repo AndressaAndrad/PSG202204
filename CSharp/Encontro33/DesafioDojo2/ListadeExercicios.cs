@@ -158,7 +158,7 @@ namespace Cap202204ConsoleApp.Desafios
                 Console.Write("Consultar o município que você procura? ");
                 string nomem = Convert.ToString(Console.ReadLine());
 
-                this.listaConsultarMunicipioPeloNome = MunicipioFakeDB.Municipios.Where(pes => pes.NomeMunicipio == nomem).ToList();
+                this.listaConsultarMunicipioPeloNome = MunicipioFakeDB.Municipios.Where(pes => pes.NomeMunicipio.ToLower() == nomem).ToList();
                 foreach (Municipio item in this.listaConsultarMunicipioPeloNome)
                 {
                     Console.ForegroundColor = ConsoleColor.Green;
@@ -193,7 +193,7 @@ namespace Cap202204ConsoleApp.Desafios
                 Console.WriteLine("-- EXERCÍCIO  5");
                 Console.WriteLine("Digite a sigla do estado (ex: RO): ");
                 string opcao = Console.ReadLine();
-                this.listaMunicipioPorEstado = MunicipioFakeDB.Municipios.Where(pes => pes.Siglauf == opcao).ToList();
+                this.listaMunicipioPorEstado = MunicipioFakeDB.Municipios.Where(pes => pes.Siglauf.StartsWith(opcao)).ToList();
                 if (this.listaMunicipioPorEstado.Count() == 0)
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
