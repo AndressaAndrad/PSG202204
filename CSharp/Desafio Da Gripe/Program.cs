@@ -1,122 +1,170 @@
-using Atacado.Modelo.RH;
 using Atacado.FakeDB.RH;
+using Atacado.Modelo.RH;
+using DesaafioDaGripe01;
 using DesafiosDaGripe01;
-using DesafiosDaGripe01.Problemas_Matematicos;
-using System;
+using static DesaafioDaGripe01.ProblemasMatematicos;
 
-namespace DesafioDaGripe01
+namespace DesafioDaGripe
 {
-    public class Program
-    {
+   public class Program
+    {   
         public static void Main(string[] args)
         {
-            //ExecutarExercicio_1_1();
-            //ExecutarExercicio_1_2();
-            //ExecutarExercicio_1_3();
-            //ExecutarExercicio_1_4();
-            //ExecutarExercicio_2_1();
-            //ExecutarExercicio_2_2();
-            //ExecutarExercicio_2_3();
-            //ExecutarExercicio_2_4();
+            ExecutarExercicio01();
+            ExecutarExercicio02();
+            ExecutarExercicio03();
             Console.ReadLine();
         }
+        ///1.1 - Desenvolva um método genérico que realize a operação matemática entre dois números e retorne o resultado.
+        ///A operação e os dois números devem ser passados por parâmetro no método.
 
-        public static void ExecutarExercicio_1_1()
+        public static void ExecutarExercicio01()
         {
-            Console.WriteLine("Qual a operação matemática?(0 - Adição, 1 - Subtração, 2 - Multiplicação, 3 - Divisão)");
-            int menu = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Informe o primeiro valor:");
+            Impressoes.ImprimirCabecalho("-- EXERCÍCIO 01 --");
+            Console.WriteLine("Qual a operação matemática? 0 - Adição, 1 - Subtração, 2 - Multiplicãção, 3 - Divisão.");
+            int menu = Convert.ToInt32(Console.ReadLine()); 
+            Console.WriteLine("Informe o primeiro valor: ");
             int num1 = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Informe o segundo valor:");
+            Console.WriteLine("Informe o segundo valor: ");
             int num2 = Convert.ToInt32(Console.ReadLine());
-            int result = 0;
+            int resul = 0;
             switch (menu)
             {
                 case 0:
-                    result = ProblemasMatematicos.Exercicio1(Operacoes.Adicao, num1, num2);
+                    resul = ProblemasMatematicos.Exercicio01(Operacoes.Adicao, num1, num2);
                     break;
-                case 1:
-                    result = ProblemasMatematicos.Exercicio1(Operacoes.Subtracao, num1, num2);
+                 case 1:
+                    resul = ProblemasMatematicos.Exercicio01(Operacoes.Subtracao, num1, num2);
                     break;
                 case 2:
-                    result = ProblemasMatematicos.Exercicio1(Operacoes.Multiplicacao, num1, num2);
+                    resul = ProblemasMatematicos.Exercicio01(Operacoes.Multipiolicacao, num1, num2);
                     break;
                 case 3:
-                    result = ProblemasMatematicos.Exercicio1(Operacoes.Divisao, num1, num2);
+                    resul = ProblemasMatematicos.Exercicio01(Operacoes.Divisao, num1, num2);
                     break;
                 default:
                     break;
             }
-            Console.WriteLine("Resultado da operação é {0}.", result);
+            Console.WriteLine("Resultado da operação é {0}.", resul);
+            Impressoes.ImprimirRodape("-- FIM EXERCÍCIO 04 --");
         }
 
-        public static void ExecutarExercicio_1_2()
+        ///1.2 - Desenvolva um método genérico que calcule e retorne o volume de uma caixa d'água retangular. 
+        ///Os valores devem ser passados por parâmetro no método.
+        ///
+        public static void ExecutarExercicio02()
         {
-            Console.WriteLine("Informe a largura:");
-            float largura = Convert.ToSingle(Console.ReadLine());
-            Console.WriteLine("Informe o comprimento:");
-            float comprimento = Convert.ToSingle(Console.ReadLine());
-            Console.WriteLine("Informe a altura:");
-            float altura = Convert.ToSingle(Console.ReadLine());
-            Console.WriteLine("O volume é igual a {0}L.", ProblemasMatematicos.Exercicio2(largura, comprimento, altura));
+            Impressoes.ImprimirCabecalho("-- EXERCÍCIO 02 --");
+            Console.WriteLine("Calculo do volume de uma caixa d´agua retangular");
+            Console.Write("Informe o comprimento: ");
+            double comprimento = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Informe a largura: ");
+            double largura = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Informe a altura: ");
+            double altura = Convert.ToDouble(Console.ReadLine());
+            double resul = 0;
+            resul = ProblemasMatematicos.Exercicio02(comprimento, largura, altura);
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("O volume da caixa d´agua é {0} cm³", resul);
+            Console.ResetColor();
+            Impressoes.ImprimirRodape("-- FIM EXERCÍCIO 02 --");
         }
-
-        public static void ExecutarExercicio_1_3()
+        /// <summary>
+        /// 1.3 - Desenvolva um método genérico que calcule e retorne o volume de um Cilindro qualquer. 
+        /// Os valores devem ser passados por parâmetro no método.
+        /// </summary>
+        public static void ExecutarExercicio03()
         {
-            Console.WriteLine("Informe o raio do cilindro: ");
-            float raio = Convert.ToSingle(Console.ReadLine());
-            Console.WriteLine("Informe a altura do cilindro: ");
-            float altura = Convert.ToSingle(Console.ReadLine());
-            ProblemasMatematicos.Exercicio3(raio, altura);
+            Impressoes.ImprimirCabecalho("-- EXERCÍCIO 03 --");
+            Console.WriteLine("Calculo de um volume de um Cilindro.");
+            Console.Write("Informe a altura: ");
+            double altura = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Informe o raio da base: ");
+            double raiobase = Convert.ToDouble(Console.ReadLine());
+            double resul = 0;
+            resul = ProblemasMatematicos.Exercicio03(altura, raiobase);
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("O volume do cilindro é {0} cm³", resul);
+            Console.ResetColor();
+            Impressoes.ImprimirRodape("-- FIM EXERCÍCIO 03 --");
         }
-
-        public static void ExecutarExercicio_1_4()
+        /// <summary>
+        /// 1.4 - Desenvolva um método genérico que calcule e retorne o volume de uma esfera.
+        /// Os valores devem ser passados por parâmetro no método.
+        /// </summary>
+        public static void ExecutarExercicio4()
         {
-            Console.WriteLine("Informe o raio do cilindro: ");
-            float raio = Convert.ToSingle(Console.ReadLine());
-            ProblemasMatematicos.Exercicio4(raio);
+            Impressoes.ImprimirCabecalho("-- EXERCÍCIO 04 --");
+            Console.Write("Informe o raio: ");
+            double raio = Convert.ToDouble(Console.ReadLine());
+            double resul = 0;
+            resul = ProblemasMatematicos.Exercicio04(raio);
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("O volume da esfera é {0} cm³", resul);
+            Console.ResetColor();
+            Impressoes.ImprimirRodape("-- FIM EXERCÍCIO 04 --");
         }
-
-        public static void ExecutarExercicio_2_1()
+        /// <summary>
+        /// 2.1 - Desenvolva um método genérico que realize a apresentação do funcionário. 
+        /// A instância do funcionário deve ser repassada por parâmetro no método.
+        /// </summary>
+        public static void ExecutarExercicio05()
         {
+            Impressoes.ImprimirCabecalho("-- EXERCÍCIO 05 --");
             Console.WriteLine("Informe o código do funcionário (1 até 100): ");
             int codigo = Convert.ToInt32(Console.ReadLine());
             List<Funcionario> funcionario = FuncionarioFakeDB.Funcionarios.Where(empregado => empregado.Codigo == codigo).ToList();
             foreach (Funcionario i in funcionario)
-            {
+            {   
+                Console.ForegroundColor = ConsoleColor.Green;
                 ProblemasFuncionario.Exercicio01(i);
+                Console.ResetColor();
             }
+            Impressoes.ImprimirRodape("-- FIM EXERCÍCIO 05 --");
         }
 
-        public static void ExecutarExercicio_2_2()
+        public static void ExecutarExercicio06()
         {
+            Impressoes.ImprimirCabecalho("-- EXERCÍCIO 06--");
             Console.WriteLine("Informe o peso do funcionário: ");
             float peso = Convert.ToSingle(Console.ReadLine());
             Console.WriteLine("Informe a altura do funcionário: ");
             float altura = Convert.ToSingle(Console.ReadLine());
+            Console.ForegroundColor = ConsoleColor.Green;
             ProblemasFuncionario.Exercicio02(peso, altura);
+            Console.ResetColor();
+            Impressoes.ImprimirRodape("-- FIM EXERCÍCIO 06 --");
         }
 
-        public static void ExecutarExercicio_2_3()
+        public static void ExecutarExercicio07()
         {
+            Impressoes.ImprimirCabecalho("-- EXERCÍCIO 07--");
             Console.WriteLine("Informe o código do funcionário (1 até 100): ");
             int codigo = Convert.ToInt32(Console.ReadLine());
             List<Funcionario> funcionario = FuncionarioFakeDB.Funcionarios.Where(pes => pes.Codigo == codigo).ToList();
             foreach (Funcionario i in funcionario)
             {
+                Console.ForegroundColor= ConsoleColor.Green;
                 ProblemasFuncionario.Exercicio03(i);
+                Console.ResetColor();
             }
+            Impressoes.ImprimirRodape("-- FIM EXERCÍCIO 07 --");
         }
 
-        public static void ExecutarExercicio_2_4()
+        public static void ExecutarExercicio08()
         {
+            Impressoes.ImprimirCabecalho("-- EXERCÍCIO 08--");
             Console.WriteLine("Informe o código do funcionário (1 até 100): ");
             int codigo = Convert.ToInt32(Console.ReadLine());
             List<Funcionario> funcionario = FuncionarioFakeDB.Funcionarios.Where(pes => pes.Codigo == codigo).ToList();
             foreach (Funcionario i in funcionario)
             {
+                Console.ForegroundColor = ConsoleColor.Green;
                 ProblemasFuncionario.Exercicio04(i);
+                Console.ResetColor() ;
             }
+            Impressoes.ImprimirRodape("-- FIM EXERCÍCIO 08 --");
         }
+
     }
 }
