@@ -19,9 +19,9 @@ namespace DesafioDaGripe
             //ExecutarExercicio06();
             //ExecutarExercicio07();
             //ExecutarExercicio08();
-            ExecutarExercicio01_01();
-            ExecutarExercicio01_02();
-            ExecutarExercicio01_03();
+            //ExecutarExercicio01_01();
+            //ExecutarExercicio01_02();
+            //ExecutarExercicio01_03();
             ExecutarExercicio02_01();
             ExecutarExercicio02_02();
             Console.ReadLine();
@@ -289,8 +289,9 @@ namespace DesafioDaGripe
             Impressoes.ImprimirCabecalho("-- Inativar Funcionario --");
             Console.Write("Digite o codigo do Funcionario: ");
             int codigo = Convert.ToInt32(Console.ReadLine());
-            ProblemasAtivarOuInativar.AtivarRegistro(codigo);
-            Impressoes.ImprimirRodape("Obrigado! Até logo");
+            ProblemasAtivarOuInativar.DesativarRegistro(codigo);
+            Console.WriteLine("Obrigado! Até logo");
+            Console.ReadLine();
 
         }
 
